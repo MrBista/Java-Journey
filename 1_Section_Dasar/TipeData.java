@@ -32,4 +32,26 @@ public class TipeData {
         String nama = "Bisman Taka";
         System.out.println(nama);
     }
+
+    public static void NonPrimitifTipeData() {
+        Integer angkaObjek = 100;
+        Long angkabanyakObjek = 100000L;
+        Boolean isTrue = true;
+        String name = "Bisboy";
+
+        System.out.println("Nama " + name + angkabanyakObjek + angkaObjek + isTrue);
+    }
+
+
+    public static  void tipdDataArray() {
+        // String[] names = new String[10]; // ini juga array dengan init atau terbatas
+        String[] names = {"Bisboy", "Bisma", "Bambang"};
+
+        System.out.println(names[0]);
+
+        for (String name : names) {
+            System.out.println("Hallo nama aku : " + name);
+        }
+
+    }
 }
