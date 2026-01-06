@@ -6,6 +6,14 @@ public class Main {
         TipeData.TipeDataBoolean();
         TipeData.TipeDataChar();
 
+        variabelTest();
+    }
+
+
+    static void variabelTest() {
+        String name = "Bisboy";
+        int age = 24;
+        System.out.println("Nama saya adalah " + name + " Saya berumur " + age);
     }
 
 }
