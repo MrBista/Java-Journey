@@ -50,6 +50,14 @@ public class Animal {
         this.type = type;
     }
 
+    public Leg getLeg() {
+        return leg;
+    }
+
+    public void setLeg(Leg leg) {
+        this.leg = leg;
+    }
+
     @Override
     public String toString() {
         return "Animal{" +
