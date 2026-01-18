@@ -13,5 +13,12 @@ public class LearnEnum {
         OrderStatus inProgressStatus = OrderStatus.valueOf("INPROGRES");
         System.out.println("Status in progress - " + inProgressStatus.name());
 
+
+        TicketStatus statusBaru = TicketStatus.fromCode(1);
+        System.out.println(statusBaru.name());
+
+//        TicketStatus statusNotFound = TicketStatus.fromCode(100);
+
+
     }
 }
