@@ -3,11 +3,16 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.belajar</groupId>
-  <artifactId>my-app</artifactId>
+  <groupId>bantuin</groupId>
+  <artifactId>belajar-maven-multi-module</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>my-app</name>
+<!--  pacakgeing nya di ubah karena default adalah jar, maka sekarang jadi pom tuk menunjukan multimodule-->
+  <packaging>
+    pom
+  </packaging>
+
+  <name>belajar-maven-multi-module</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -16,35 +21,79 @@
     <maven.compiler.release>17</maven.compiler.release>
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.junit</groupId>
-        <artifactId>junit-bom</artifactId>
-        <version>5.11.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+<!--  <modules>-->
+<!--    <module>belajar-maven-multi-module-module-service</module>-->
+<!--  </modules>-->
+  <modules>
+    <module>module-core</module>
+    <module>module-data</module>
+  </modules>
+
+<!--  <dependencyManagement>-->
+<!--    <dependencies>-->
+<!--      &lt;!&ndash; Source: https://mvnrepository.com/artifact/com.google.code.gson/gson &ndash;&gt;-->
+
+<!--      <dependency>-->
+<!--        <groupId>org.junit</groupId>-->
+<!--        <artifactId>junit-bom</artifactId>-->
+<!--        <version>5.11.0</version>-->
+<!--        <type>pom</type>-->
+<!--        <scope>import</scope>-->
+<!--      </dependency>-->
+<!--    </dependencies>-->
+<!--  </dependencyManagement>-->
 
   <dependencies>
+
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.13.2</version>
+      <scope>compile</scope>
+    </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
     <!-- Optionally: parameterized tests support -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-params</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
   <build>
+    <plugins>
+<!--      ini adalah plugin tuk buat fat distribution file -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>belajar.multi.module.meaven.Main</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -62,17 +111,6 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.3.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.4.2</version>
-          <configuration>
-            <archive>
-              <manifest>
-                <mainClass>com.belajar.App</mainClass>
-              </manifest>
-            </archive>
-          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
