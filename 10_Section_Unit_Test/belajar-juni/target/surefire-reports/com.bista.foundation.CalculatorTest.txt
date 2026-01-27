@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.bista.foundation.CalculatorTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 2, Time elapsed: 0.049 s <<< FAILURE! -- in com.bista.foundation.CalculatorTest
+com.bista.foundation.CalculatorTest.testAssumption -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.Exception: bad req
+	at com.bista.foundation.CalculatorTest.testAssumption(CalculatorTest.java:81)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
