@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.bista.foundation.SimpleIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 5.015 s <<< FAILURE! -- in com.bista.foundation.SimpleIntegrationTest
+com.bista.foundation.SimpleIntegrationTest.toTest -- Time elapsed: 5.010 s <<< ERROR!
+java.util.concurrent.TimeoutException: toTest() timed out after 5 seconds
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: java.lang.InterruptedException: sleep interrupted
+		at java.base/java.lang.Thread.sleep(Native Method)
+		at com.bista.foundation.SimpleIntegrationTest.toTest(SimpleIntegrationTest.java:26)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+		... 2 more
+

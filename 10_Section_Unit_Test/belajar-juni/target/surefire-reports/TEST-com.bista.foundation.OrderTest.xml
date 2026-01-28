@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.bista.foundation.CalculatorTest" time="0.057" tests="6" errors="0" skipped="3" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.bista.foundation.OrderTest" time="0.009" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -7,6 +7,7 @@
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="Asia/Jakarta"/>
     <property name="os.name" value="Linux"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -52,48 +53,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testDevidedWithZero" classname="com.bista.foundation.CalculatorTest" time="0.016">
-    <system-out><![CDATA[Before all runing
-Before unit test
-unit test
-After unit test
+  <testcase name="test2" classname="com.bista.foundation.OrderTest" time="0.001">
+    <system-out><![CDATA[count init 0
+hai ini order 1 - 1
 ]]></system-out>
   </testcase>
-  <testcase name="testAssumption" classname="com.bista.foundation.CalculatorTest" time="0.0">
-    <skipped type="org.opentest4j.TestAbortedException"><![CDATA[org.opentest4j.TestAbortedException: Assumption failed: berhenti
-	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
-	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
-	at com.bista.foundation.CalculatorTest.testAssumption(CalculatorTest.java:81)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-]]></skipped>
-    <system-out><![CDATA[Before unit test
-After unit test
-]]></system-out>
-  </testcase>
-  <testcase name="testAborted" classname="com.bista.foundation.CalculatorTest" time="0.0">
-    <skipped type="org.opentest4j.TestAbortedException"><![CDATA[org.opentest4j.TestAbortedException: Ga berlaku tuk production
-	at com.bista.foundation.CalculatorTest.testAborted(CalculatorTest.java:73)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-]]></skipped>
-    <system-out><![CDATA[Before unit test
-After unit test
-]]></system-out>
-  </testcase>
-  <testcase name="testAddSuccess" classname="com.bista.foundation.CalculatorTest" time="0.002">
-    <system-out><![CDATA[Before unit test
-After unit test
-]]></system-out>
-  </testcase>
-  <testcase name="testCommintSoon" classname="com.bista.foundation.CalculatorTest" time="0.0">
-    <skipped message="public void com.bista.foundation.CalculatorTest.testCommintSoon() is @Disabled"/>
-  </testcase>
-  <testcase name="testAddBigAmount" classname="com.bista.foundation.CalculatorTest" time="0.001">
-    <system-out><![CDATA[Before unit test
-After unit test
+  <testcase name="test1" classname="com.bista.foundation.OrderTest" time="0.001">
+    <system-out><![CDATA[hai ini order 2 - 2
 ]]></system-out>
   </testcase>
 </testsuite>

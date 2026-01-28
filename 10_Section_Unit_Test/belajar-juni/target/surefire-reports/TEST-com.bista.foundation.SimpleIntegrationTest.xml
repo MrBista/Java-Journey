@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.bista.foundation.CalculatorTest" time="0.057" tests="6" errors="0" skipped="3" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.bista.foundation.SimpleIntegrationTest" time="5.015" tests="3" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -52,48 +52,23 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testDevidedWithZero" classname="com.bista.foundation.CalculatorTest" time="0.016">
-    <system-out><![CDATA[Before all runing
-Before unit test
-unit test
-After unit test
+  <testcase name="integrationTestSimple" classname="com.bista.foundation.SimpleIntegrationTest" time="0.001">
+    <system-out><![CDATA[Integration test simple
 ]]></system-out>
   </testcase>
-  <testcase name="testAssumption" classname="com.bista.foundation.CalculatorTest" time="0.0">
-    <skipped type="org.opentest4j.TestAbortedException"><![CDATA[org.opentest4j.TestAbortedException: Assumption failed: berhenti
-	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
-	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
-	at com.bista.foundation.CalculatorTest.testAssumption(CalculatorTest.java:81)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+  <testcase name="toTest" classname="com.bista.foundation.SimpleIntegrationTest" time="5.01">
+    <error message="toTest() timed out after 5 seconds" type="java.util.concurrent.TimeoutException"><![CDATA[java.util.concurrent.TimeoutException: toTest() timed out after 5 seconds
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-]]></skipped>
-    <system-out><![CDATA[Before unit test
-After unit test
-]]></system-out>
+	Suppressed: java.lang.InterruptedException: sleep interrupted
+		at java.base/java.lang.Thread.sleep(Native Method)
+		at com.bista.foundation.SimpleIntegrationTest.toTest(SimpleIntegrationTest.java:26)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+		... 2 more
+]]></error>
   </testcase>
-  <testcase name="testAborted" classname="com.bista.foundation.CalculatorTest" time="0.0">
-    <skipped type="org.opentest4j.TestAbortedException"><![CDATA[org.opentest4j.TestAbortedException: Ga berlaku tuk production
-	at com.bista.foundation.CalculatorTest.testAborted(CalculatorTest.java:73)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-]]></skipped>
-    <system-out><![CDATA[Before unit test
-After unit test
-]]></system-out>
-  </testcase>
-  <testcase name="testAddSuccess" classname="com.bista.foundation.CalculatorTest" time="0.002">
-    <system-out><![CDATA[Before unit test
-After unit test
-]]></system-out>
-  </testcase>
-  <testcase name="testCommintSoon" classname="com.bista.foundation.CalculatorTest" time="0.0">
-    <skipped message="public void com.bista.foundation.CalculatorTest.testCommintSoon() is @Disabled"/>
-  </testcase>
-  <testcase name="testAddBigAmount" classname="com.bista.foundation.CalculatorTest" time="0.001">
-    <system-out><![CDATA[Before unit test
-After unit test
+  <testcase name="integrationTest1" classname="com.bista.foundation.SimpleIntegrationTest" time="0.002">
+    <system-out><![CDATA[Integration test simple
 ]]></system-out>
   </testcase>
 </testsuite>
