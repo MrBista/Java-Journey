@@ -19,8 +19,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.junit</groupId>
-        <artifactId>junit-bom</artifactId>
+          <groupId>org.junit</groupId>
+          <artifactId>junit-bom</artifactId>
         <version>5.11.0</version>
         <type>pom</type>
         <scope>import</scope>
@@ -29,6 +29,13 @@
   </dependencyManagement>
 
   <dependencies>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.33</version>
+    </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
