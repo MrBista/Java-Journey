@@ -11,6 +11,11 @@ public class BatchProsesTest {
 
     @Test
     void testBatchInsertPrepartstament() throws SQLException {
+        /*
+            concern kalau batch itu ke memori
+            karena sebelum masuk ke database akan masuk ke memory alocation dulu
+            bisa out of memory kalau ga di handle well enough
+         */
         String sqlInsertUser = """
                 insert into users(username, password, name) values(?, ?, ?);
                 """;
