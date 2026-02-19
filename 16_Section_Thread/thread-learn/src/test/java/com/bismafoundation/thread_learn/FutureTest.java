@@ -4,7 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.util.AssertionErrors;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
 
 public class FutureTest {
 
@@ -78,5 +81,44 @@ public class FutureTest {
         executorService.shutdown();
         executorService.awaitTermination(2, TimeUnit.SECONDS);
     }
+
+    @Test
+    void futureInvokeAllTest() throws InterruptedException, ExecutionException {
+        // ini untuk paralel menjalankan di thread yg beda dnegan waktu yang sama atau paralel sehingga ga perlu tunggu yg lain
+
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+
+        Callable<Integer> futureCepat = () -> {
+            Thread.sleep(500);
+            return 23;
+        };
+
+
+        Callable<Integer> futureLambat = () -> {
+            Thread.sleep(2_000);
+            return 40;
+        };
+
+        Future<String> futureString = executorService.submit(() -> {
+           Thread.sleep(500);
+            return "String submited";
+        });
+
+
+        List<Callable<Integer>> callables = Arrays.asList(futureLambat, futureCepat);
+
+        List<Future<Integer>> getAllFuture = executorService.invokeAll(callables);
+
+        for(Future<Integer> future: getAllFuture) {
+            System.out.println("Each future value: " + future.get());
+        }
+
+        executorService.shutdown();
+        executorService.awaitTermination(2, TimeUnit.SECONDS);
+
+
+    }
+
 
 }
