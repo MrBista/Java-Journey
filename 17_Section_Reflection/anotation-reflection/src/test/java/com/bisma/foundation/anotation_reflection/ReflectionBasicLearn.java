@@ -117,6 +117,12 @@ public class ReflectionBasicLearn {
         System.out.println(isAnotationPresent);
         System.out.println(usernameFiled.isAnnotationPresent(NotBlank.class));
 
+    }
 
+    @Test
+    void testAnnotationImplementationValidator() throws IllegalAccessException {
+        UserDto user = new UserDto("gustibisman", "", "gustibimsan");
+
+        Validator.validateNotBlank(user);
     }
 }
