@@ -1,20 +1,24 @@
 package com.bisma.foundation.anotation_reflection.dto;
 
+import com.bisma.foundation.anotation_reflection.anotation.NotBlank;
 import com.bisma.foundation.anotation_reflection.anotation.Required;
 
 public class UserDto {
     @Required
+    @NotBlank(false)
     private String username;
 
     @Required
-    private String emamil;
+    @NotBlank
+    private String email;
 
     @Required
+    @NotBlank
     private String password;
 
-    public UserDto(String username, String emamil, String password) {
+    public UserDto(String username, String email, String password) {
         this.username = username;
-        this.emamil = emamil;
+        this.email = email;
         this.password = password;
     }
 
@@ -29,12 +33,12 @@ public class UserDto {
         this.username = username;
     }
 
-    public String getEmamil() {
-        return emamil;
+    public String getEmmil() {
+        return email;
     }
 
-    public void setEmamil(String emamil) {
-        this.emamil = emamil;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -49,7 +53,7 @@ public class UserDto {
     public String toString() {
         return "UserDto{" +
                 "username='" + username + '\'' +
-                ", emamil='" + emamil + '\'' +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
